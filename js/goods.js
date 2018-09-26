@@ -137,14 +137,6 @@ cardsData.forEach(setCards);
 
 document.querySelector('.catalog__cards').appendChild(cardsList);
 
-var getRandomArrarItems = function (array) {
-  var result = [];
-  for (var i = 0; i < 3; i++) {
-    result.push(array[i]);
-  }
-  return result;
-};
-
 var cardsOrder = document.createDocumentFragment();
 var setOrders = function (data) {
   var order = getElementCopy('#card-order', '.card-order');
@@ -161,7 +153,7 @@ var setOrders = function (data) {
   cardsOrder.appendChild(order);
 };
 
-getRandomArrarItems(cardsData).forEach(setOrders);
+(cardsData).slice(0, 3).forEach(setOrders);
 
 var cardsIsOrder = document.querySelector('.goods__cards');
 cardsIsOrder.appendChild(cardsOrder);
